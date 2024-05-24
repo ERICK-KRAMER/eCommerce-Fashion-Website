@@ -1,9 +1,11 @@
 import { Menu, ShoppingBag, Truck, User, Fingerprint, RotateCcw, Headset } from "lucide-react";
 import { Header } from "../components/Header";
-import { Card } from "../components/Card-Item/Card";
+import { Card } from "../components/Card-Item";
 import { Information } from "../components/information";
 import { Promo } from "../components/promo";
 import { Footer } from "../components/footer/footer";
+import { Baner } from "../components/baner/baner";
+
 
 const Home = () => {
   return(
@@ -22,18 +24,56 @@ const Home = () => {
         </Header.NavIcon>
       </Header.Root>
 
+      <Baner/>
+
       <section className="p-10">
         
         <div className="flex justify-center items-center flex-col gap-3">
-          <h1 className="text-6xl font-medium">Discover NEW Arrivals</h1>
+          <h1 className="text-5xl font-medium">Discover NEW Arrivals</h1>
           <small className="text-neutral-400 text-base">Recently added shirts!</small>
         </div>
 
         <div className="grid grid-cols-4 my-10 place-items-center">
-          <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
+          <Card.Root>
+            <Card.Image />
+            <Card.Data/>
+          </Card.Root>
+          
+          <Card.Root>
+            <Card.Image />
+            <Card.Data/>
+          </Card.Root>
+          
+          <Card.Root>
+            <Card.Image />
+            <Card.Data/>
+          </Card.Root>
+          
+          <Card.Root>
+            <Card.Image />
+            <Card.Data/>
+          </Card.Root>
+          
+          <Card.Root>
+            <Card.Image />
+            <Card.Data/>
+          </Card.Root>
+          
+          <Card.Root>
+            <Card.Image />
+            <Card.Data/>
+          </Card.Root>
+          
+          <Card.Root>
+            <Card.Image />
+            <Card.Data/>
+          </Card.Root>
+          
+          <Card.Root>
+            <Card.Image />
+            <Card.Data/>
+          </Card.Root>
+
         </div>
 
         <Information.Root>
@@ -72,18 +112,39 @@ const Home = () => {
       <section className="p-10">
         
         <div className="flex justify-center items-center flex-col gap-3">
-          <h1 className="text-6xl font-medium">Top Sellers</h1>
+          <h1 className="text-5xl font-medium">Top Sellers</h1>
           <small className="text-neutral-400 text-base">Browse our top-selling products</small>
         </div>
 
         <div className="grid grid-cols-4 my-10 place-items-center">
-          <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
+          
+          <Card.Root>
+            <Card.Image />
+            <Card.Data/>
+          </Card.Root>
+          
+          <Card.Root>
+            <Card.Image />
+            <Card.Data/>
+          </Card.Root>
+          
+          <Card.Root>
+            <Card.Image />
+            <Card.Data/>
+          </Card.Root>
+          
+          <Card.Root>
+            <Card.Image />
+            <Card.Data/>
+          </Card.Root>
+
         </div>
+
         <div className=" flex justify-center items-center">
-          <button className="px-10 p-4 bg-sky-700 text-white font-medium outline-none">SHOP NOW</button>
+          <button
+            className="px-10 p-4 bg-sky-700 text-white font-medium outline-none transition duration-500 hover:bg-sky-800">
+            SHOP NOW
+          </button>
         </div>
 
       </section>

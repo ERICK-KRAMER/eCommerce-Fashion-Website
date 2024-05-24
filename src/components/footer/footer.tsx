@@ -1,4 +1,9 @@
 import { ChevronsRight } from "lucide-react";
+import mastercard from "../../../public/mastercard.png";
+import paypal from '../../../public/paypal.png';
+import visa from "../../../public/visa.png";
+import visaElectron from "../../../public/visaElectron.png";
+
 
 const Footer = () => {
   return(
@@ -61,8 +66,19 @@ const Footer = () => {
           <small>© 2020 NorthStar eCommerce</small>
           <small>Privacy Policy Terms & Conditions</small>
         </div>
-        <div>
-          Cartoes
+        <div className="flex gap-4">
+          <span className="cursor-default">
+            <img src={ mastercard } alt="Mastercard" className="w-10 h-6"/>
+          </span>
+          <span className="cursor-default">
+            <img src={ paypal } alt="PayPal" className="w-10 h-6"/>
+          </span>
+          <span className="cursor-default">
+            <img src={ visa } alt="Visa" className="w-10 h-6"/>
+          </span>
+          <span className="cursor-default">
+            <img src={ visaElectron }  alt="Visa Electron" className="w-10 h-6"/>
+          </span>
         </div>
       </div>
       
