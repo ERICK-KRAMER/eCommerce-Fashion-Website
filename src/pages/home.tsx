@@ -29,11 +29,11 @@ const Home = () => {
       <section className="p-10">
         
         <div className="flex justify-center items-center flex-col gap-3">
-          <h1 className="text-5xl font-medium">Discover NEW Arrivals</h1>
+          <h1 className="text-5xl max-sm:text-3xl max-md:text-4xl font-medium">Discover NEW Arrivals</h1>
           <small className="text-neutral-400 text-base">Recently added shirts!</small>
         </div>
 
-        <div className="grid grid-cols-4 my-10 place-items-center">
+        <div className="grid grid-cols-4 my-10 place-items-center max-sm:grid-cols-2 max-md:grid-cols-3 max-lg:grid-cols-4 gap-10">
           <Card.Root>
             <Card.Image />
             <Card.Data/>
@@ -93,15 +93,17 @@ const Home = () => {
 
       </section>
       
-      <section className="p-16 flex gap-4">
+      <section className="p-16 flex max-sm:flex-col gap-4">
 
-        <Promo.Root style={{ flex: '1 1 60%' }} 
+        <Promo.Root style={{ flex: '1 1 60%' }}
+          className="translateLeft"  
           title="Peace of mind" 
           description="A one-stop platform for all your fashion needs, hassle-free. Buy with a peace of mind.">
           <Promo.Button/>
         </Promo.Root>
 
-        <Promo.Root style={{ flex: '1 1 40%' }} 
+        <Promo.Root style={{ flex: '1 1 40%' }}
+          className="translateRight"  
           title="Buy 2 Get 1 Free" 
           description="End of season sale. Buy any 2 items of your choice and get 1 free.">
           <Promo.Button/>
@@ -112,11 +114,11 @@ const Home = () => {
       <section className="p-10">
         
         <div className="flex justify-center items-center flex-col gap-3">
-          <h1 className="text-5xl font-medium">Top Sellers</h1>
+          <h1 className="text-5xl max-sm:text-3xl max-md:text-4xl font-medium">Top Sellers</h1>
           <small className="text-neutral-400 text-base">Browse our top-selling products</small>
         </div>
 
-        <div className="grid grid-cols-4 my-10 place-items-center">
+        <div className="grid grid-cols-4 my-10 place-items-center max-sm:grid-cols-2 max-md:grid-cols-3 max-lg:grid-cols-4 gap-10">
           
           <Card.Root>
             <Card.Image />

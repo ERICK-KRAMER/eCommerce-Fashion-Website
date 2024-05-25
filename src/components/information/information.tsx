@@ -1,7 +1,7 @@
 
 const Information = ({children}: {children: React.ReactNode}) => {
   return(
-    <div className=" p-10 cursor-default grid grid-cols-4 place-items-center">
+    <div className=" cursor-default flex flex-wrap justify-center items-center p-4">
       {children}
     </div>
   )

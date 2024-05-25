@@ -1,6 +1,6 @@
 const Items = ({item}:{item: string}) => {
   return(
-    <li className="hover:underline cursor-pointer">{item}</li>
+    <li className="hover:text-sky-700 cursor-pointer">{item}</li>
   )
 }
 export {Items};

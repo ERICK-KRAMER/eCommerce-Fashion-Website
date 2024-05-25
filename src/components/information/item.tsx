@@ -7,9 +7,9 @@ interface InformationItemProps extends HtmlHTMLAttributes<HTMLDivElement>{
 
 const InformationItem: React.FC<InformationItemProps> = ({description, children}) => {
   return(
-    <div className=" p-4 cursor-default w-[280px]">
+    <div className=" p-4 cursor-default w-[280px] max-[375px]:text-lg">
       {children}
-      <div className=" w-[189px] ml-10">
+      <div className=" ml-10 w-[170px]">
         <small className="text-neutral-400">{description}</small>
       </div>
     </div>

@@ -8,7 +8,7 @@ export default {
     extend: {
       backgroundImage: {
         'baner': 'url("./public/baner.png")',
-      }
+      },
     },
   },
   plugins: [],

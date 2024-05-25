@@ -7,8 +7,8 @@ import visaElectron from "../../../public/visaElectron.png";
 
 const Footer = () => {
   return(
-    <footer className="p-10 bg-neutral-100 flex flex-col gap-4">
-      <div className="grid grid-cols-4 place-items-center">
+    <footer className="p-6 bg-neutral-100 flex flex-col gap-2">
+      <div className=" flex flex-col justify-center md:grid md:grid-cols-4 md:px-10">
         
         <div className="flex flex-col gap-2">
           <div className="flex justify-start items-start flex-col gap-2 h-[180px]">
@@ -61,7 +61,7 @@ const Footer = () => {
 
       <hr className="bg-neutral-400"/>
 
-      <div className="flex justify-between items-center px-10 mt-4">
+      <div className="flex justify-between items-center px-10 mt-4 max-sm:flex-col max-sm:gap-y-6">
         <div className="flex flex-col gap-1">
           <small>© 2020 NorthStar eCommerce</small>
           <small>Privacy Policy Terms & Conditions</small>
