@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Menu, ShoppingBag, User } from "lucide-react";
 import { Header } from "../components/Header";
 import { AboutBaner } from "../components/baner/aboutBaner";
@@ -5,10 +6,15 @@ import founder from "../../public/about/image.png";
 import comment from "../../public/comment.png";
 import { Quote } from "lucide-react";
 import { Footer } from "../components/footer/footer";
+import { Sidebar } from "../components/sidebar/sidebar";
 
 const About = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
   return (
-    <>
+    <main onClick={() => setIsOpen(false)}>
+       <Sidebar setIsOpen={setIsOpen} className={`${isOpen ? 'sidebarAnimationOpen' : 'hidden'}`} />
+
       <Header.Root>
         <Header.NavItem>
           <Header.item item={"Home"} to="/"/>
@@ -18,19 +24,29 @@ const About = () => {
         <Header.NavIcon>
           <User className="cursor-pointer"/>
           <ShoppingBag className="cursor-pointer"/>
-          <Menu className="cursor-pointer"/>
+          <Menu
+            className="cursor-pointer"
+            onClick={(e) => {
+              e.stopPropagation()
+              setIsOpen(prev => !prev)
+            }} />
         </Header.NavIcon>
       </Header.Root>
 
       <AboutBaner />
       
-      <div className="p-16 flex justify-center items-center gap-10 max-sm:flex-col">
-        <div className="bg-imageAbout w-96 h-96 max-md:w-72 max-md:h-72 bg-cover flex justify-center items-end p-10">
+      <div className="p-10 flex items-center justify-between max-sm:flex-col gap-10">
+        
+        <div className="bg-imageAbout w-[800px] h-[800px] max-lg:w-[500px]
+        max-lg:h-[500px] max-md:w-72 max-md:h-72 bg-cover flex justify-center items-end p-10 bg-center">
           <button className=" max-md:py-1 max-md:px-6 rounded-xl text-sky-700 px-10 py-2 bg-white hover:text-white hover:bg-sky-700 transition duration-500">BUY NOW</button>
         </div>
-        <div className="bg-imageAbout2 w-96 h-96 max-md:w-72 max-md:h-72 bg-cover flex justify-center items-end p-10" >
+
+        <div className="bg-imageAbout2 w-[800px] h-[800px] max-lg:w-[500px]
+        max-lg:h-[500px] max-md:w-72 max-md:h-72 bg-cover flex justify-center items-end p-10 bg-center" >
           <button className=" max-md:py-1 max-md:px-6 rounded-xl text-sky-700 px-10 py-2 bg-white hover:text-white hover:bg-sky-700 transition duration-500">BUY NOW</button>
         </div>
+
       </div>
 
       <div className="flex justify-center items-center flex-col gap-16 p-10 bg-neutral-200">
@@ -115,7 +131,7 @@ const About = () => {
       </div>
 
       <Footer/>
-    </>
+    </main>
   )
 }
 

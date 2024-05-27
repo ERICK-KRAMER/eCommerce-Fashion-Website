@@ -68,3 +68,15 @@
     translate: 0 0;
   }
 }
+
+.sidebarAnimationOpen {
+  animation: sidebarAnimationOpen 1s ease-in-out;
+}
+
+@keyframes sidebarAnimationOpen {
+  from {
+    translate: 100vw;
+  } to {
+    translate: 0;
+  }
+}

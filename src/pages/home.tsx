@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Menu, ShoppingBag, Truck, User, Fingerprint, RotateCcw, Headset } from "lucide-react";
 import { Header } from "../components/Header";
 import { Card } from "../components/Card-Item";
@@ -5,10 +6,15 @@ import { Information } from "../components/information";
 import { Promo } from "../components/promo";
 import { Footer } from "../components/footer/footer";
 import { Baner } from "../components/baner/baner";
+import { Sidebar } from "../components/sidebar/sidebar";
 
 const Home = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
   return(
-    <>
+    <main onClick={() => setIsOpen(false)}>
+      
+      <Sidebar setIsOpen={setIsOpen} className={`${isOpen ? 'sidebarAnimationOpen' : 'hidden'}`} />
 
       <Header.Root>
         <Header.NavItem>
@@ -19,9 +25,15 @@ const Home = () => {
         <Header.NavIcon>
           <User className="cursor-pointer"/>
           <ShoppingBag className="cursor-pointer"/>
-          <Menu className="cursor-pointer"/>
+          <Menu
+            className="cursor-pointer"
+            onClick={(e) => {
+              e.stopPropagation()
+              setIsOpen(prev => !prev)
+            }} />
         </Header.NavIcon>
       </Header.Root>
+
 
       <Baner/>
 
@@ -152,7 +164,7 @@ const Home = () => {
 
       <Footer/>
 
-    </>
+    </main>
   )
 }
 
