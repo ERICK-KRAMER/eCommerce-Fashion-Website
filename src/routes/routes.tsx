@@ -1,13 +1,15 @@
-import { BrowserRouter, Routes as Switch, Route, Navigate } from "react-router-dom"
-import { Home } from "../pages/home"
-import { Testes } from "../pages/testes"
+import { BrowserRouter, Routes as Switch, Route, Navigate } from "react-router-dom";
+import { Home } from "../pages/home";
+import { Testes } from "../pages/testes";
+import { About } from "../pages/about";
 
 const Routes = () => {
   return(
     <BrowserRouter>
       <Switch>
         <Route path="/" element={<Home />} />
-        <Route path="teste" element={<Testes/>} />
+        <Route path="/about" element={<About />} />
+        <Route path="teste" element={<Testes />} />
       </Switch>
     </BrowserRouter>
   )

@@ -6,15 +6,14 @@ import { Promo } from "../components/promo";
 import { Footer } from "../components/footer/footer";
 import { Baner } from "../components/baner/baner";
 
-
 const Home = () => {
   return(
     <>
 
       <Header.Root>
         <Header.NavItem>
-          <Header.item item={"Home"}/>
-          <Header.item item={"About"}/>
+          <Header.item item={"Home"} to="/"/>
+          <Header.item item={"About"} to="/about"/>
           <Header.item item={"Contact Us"}/>
         </Header.NavItem>
         <Header.NavIcon>
