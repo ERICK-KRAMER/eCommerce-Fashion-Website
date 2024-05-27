@@ -13,7 +13,7 @@ const About = () => {
         <Header.NavItem>
           <Header.item item={"Home"} to="/"/>
           <Header.item item={"About"} to="/about"/>
-          <Header.item item={"Contact Us"}/>
+          <Header.item item={"Contact Us"} to="/contact"/>
         </Header.NavItem>
         <Header.NavIcon>
           <User className="cursor-pointer"/>
@@ -56,8 +56,10 @@ const About = () => {
       </div>
 
       <div className="flex justify-center items-center gap-4 flex-col p-10">
+
         <h1 className="text-3xl font-medium">Testimonials</h1>
-        <div className="flex p-16 items-center justify-around gap-32 max-xl:flex-col max-lg:gap-8">
+
+        <div className="flex p-16 items-center justify-around gap-32 max-xl:flex-col max-lg:gap-8 commentAnimationLeft">
           <img src={ comment } alt="Comentario" className="w-64 "/>
           <div className="flex flex-col gap-2">
             <Quote/>
@@ -66,7 +68,9 @@ const About = () => {
           </div>
         </div>
 
-        <div className="flex p-16 items-center justify-around gap-32 max-xl:flex-col max-lg:gap-8">
+        <hr className="w-full bg-neutral-300 h-[1px]"/>
+
+        <div className="flex p-16 items-center justify-around gap-32 max-xl:flex-col max-lg:gap-8 commentAnimationRight">
           <img src={ comment } alt="Comentario" className="w-64 "/>
           <div className="flex flex-col gap-2">
             <Quote/>
@@ -75,7 +79,9 @@ const About = () => {
           </div>
         </div>
 
-        <div className="flex p-16 items-center justify-around gap-32 max-xl:flex-col max-lg:gap-8">
+        <hr className="w-full bg-neutral-300 h-[1px]"/>
+
+        <div className="flex p-16 items-center justify-around gap-32 max-xl:flex-col max-lg:gap-8 commentAnimationLeft">
           <img src={ comment } alt="Comentario" className="w-64 "/>
           <div className="flex flex-col gap-2">
             <Quote/>
@@ -84,7 +90,9 @@ const About = () => {
           </div>
         </div>
 
-        <div className="flex p-16 items-center justify-around gap-32 max-xl:flex-col max-lg:gap-8">
+        <hr className="w-full bg-neutral-300 h-[1px]"/>
+
+        <div className="flex p-16 items-center justify-around gap-32 max-xl:flex-col max-lg:gap-8 commentAnimationRight">
           <img src={ comment } alt="Comentario" className="w-64 "/>
           <div className="flex flex-col gap-2">
             <Quote/>
@@ -93,7 +101,9 @@ const About = () => {
           </div>
         </div>
 
-        <div className="flex p-16 items-center justify-around gap-32 max-xl:flex-col max-lg:gap-8">
+        <hr className="w-full bg-neutral-300 h-[1px]"/>
+
+        <div className="flex p-16 items-center justify-around gap-32 max-xl:flex-col max-lg:gap-8 commentAnimationLeft">
           <img src={ comment } alt="Comentario" className="w-64 "/>
           <div className="flex flex-col gap-2">
             <Quote/>

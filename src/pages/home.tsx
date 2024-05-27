@@ -14,7 +14,7 @@ const Home = () => {
         <Header.NavItem>
           <Header.item item={"Home"} to="/"/>
           <Header.item item={"About"} to="/about"/>
-          <Header.item item={"Contact Us"}/>
+          <Header.item item={"Contact Us"} to="/contact"/>
         </Header.NavItem>
         <Header.NavIcon>
           <User className="cursor-pointer"/>
