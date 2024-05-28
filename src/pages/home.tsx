@@ -52,6 +52,7 @@ const Home = () => {
           <Card.Root key={item.id}>
             <Card.Image src={item.image} alt={item.name} />
             <Card.Data name={item.name} value={item.price} />
+            <Card.Button/>
           </Card.Root>
         ))}
           
@@ -99,6 +100,7 @@ const Home = () => {
             <Card.Root key={item.id}>
               <Card.Image src={item.image} alt={item.name} />
               <Card.Data name={item.name} value={item.price} />
+              <Card.Button/>
             </Card.Root>
           )
         })}
