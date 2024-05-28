@@ -49,7 +49,7 @@ const Footer = () => {
         
         <div className="flex flex-col">
           <div className="flex justify-start items-start flex-col gap-2 h-[180px]">
-            <h3 className="text-lg font-medium cursor-default">get in the know</h3>
+            <h3 className="text-lg font-medium cursor-default">Get in the know</h3>
             <div className="border-b-2 p-2 flex gap-4">
               <input type="text" placeholder="Enter email" className="border-none bg-neutral-100 outline-none"/>
               <button><ChevronsRight/></button>
