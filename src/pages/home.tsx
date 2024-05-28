@@ -7,6 +7,7 @@ import { Promo } from "../components/promo";
 import { Footer } from "../components/footer/footer";
 import { Baner } from "../components/baner/baner";
 import { Sidebar } from "../components/sidebar/sidebar";
+import { SectionComponent } from "../components/home/sectionComponent";
 
 const Home = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -35,57 +36,53 @@ const Home = () => {
       </Header.Root>
 
 
-      <Baner/>
-
-      <section className="p-10">
+      <Baner />
+      
+      <SectionComponent
+        title="Discover NEW Arrivals"
+        description="Recently added shirts!"
+      >
+          <Card.Root>
+            <Card.Image />
+            <Card.Data/>
+          </Card.Root>
+          
+          <Card.Root>
+            <Card.Image />
+            <Card.Data/>
+          </Card.Root>
+          
+          <Card.Root>
+            <Card.Image />
+            <Card.Data/>
+          </Card.Root>
+          
+          <Card.Root>
+            <Card.Image />
+            <Card.Data/>
+          </Card.Root>
+          
+          <Card.Root>
+            <Card.Image />
+            <Card.Data/>
+          </Card.Root>
+          
+          <Card.Root>
+            <Card.Image />
+            <Card.Data/>
+          </Card.Root>
+          
+          <Card.Root>
+            <Card.Image />
+            <Card.Data/>
+          </Card.Root>
+          
+          <Card.Root>
+            <Card.Image />
+            <Card.Data/>
+          </Card.Root>
         
-        <div className="flex justify-center items-center flex-col gap-3">
-          <h1 className="text-5xl max-sm:text-3xl max-md:text-4xl font-medium">Discover NEW Arrivals</h1>
-          <small className="text-neutral-400 text-base">Recently added shirts!</small>
-        </div>
-
-        <div className="grid grid-cols-4 my-10 place-items-center max-sm:grid-cols-2 max-md:grid-cols-3 max-lg:grid-cols-4 gap-10">
-          <Card.Root>
-            <Card.Image />
-            <Card.Data/>
-          </Card.Root>
-          
-          <Card.Root>
-            <Card.Image />
-            <Card.Data/>
-          </Card.Root>
-          
-          <Card.Root>
-            <Card.Image />
-            <Card.Data/>
-          </Card.Root>
-          
-          <Card.Root>
-            <Card.Image />
-            <Card.Data/>
-          </Card.Root>
-          
-          <Card.Root>
-            <Card.Image />
-            <Card.Data/>
-          </Card.Root>
-          
-          <Card.Root>
-            <Card.Image />
-            <Card.Data/>
-          </Card.Root>
-          
-          <Card.Root>
-            <Card.Image />
-            <Card.Data/>
-          </Card.Root>
-          
-          <Card.Root>
-            <Card.Image />
-            <Card.Data/>
-          </Card.Root>
-
-        </div>
+      </SectionComponent>
 
         <Information.Root>
           <Information.Item description="Enjoy free shipping on all orders above $100">
@@ -101,8 +98,6 @@ const Home = () => {
             <Information.Icon icon={Fingerprint} name="100% PAYMENT SECURE"/>
           </Information.Item>
         </Information.Root>
-
-      </section>
       
       <section className="p-16 flex max-sm:flex-col gap-4">
 
@@ -122,45 +117,38 @@ const Home = () => {
 
       </section>
 
-      <section className="p-10">
+      <SectionComponent
+        title="Top Sellers"
+        description="Browse our top-selling products"
+      >
+          <Card.Root>
+            <Card.Image />
+            <Card.Data/>
+          </Card.Root>
+          
+          <Card.Root>
+            <Card.Image />
+            <Card.Data/>
+          </Card.Root>
+          
+          <Card.Root>
+            <Card.Image />
+            <Card.Data/>
+          </Card.Root>
+          
+          <Card.Root>
+            <Card.Image />
+            <Card.Data/>
+          </Card.Root>
+
+      </SectionComponent>
         
-        <div className="flex justify-center items-center flex-col gap-3">
-          <h1 className="text-5xl max-sm:text-3xl max-md:text-4xl font-medium">Top Sellers</h1>
-          <small className="text-neutral-400 text-base">Browse our top-selling products</small>
-        </div>
-
-        <div className="grid grid-cols-4 my-10 place-items-center max-sm:grid-cols-2 max-md:grid-cols-3 max-lg:grid-cols-4 gap-10">
-          
-          <Card.Root>
-            <Card.Image />
-            <Card.Data/>
-          </Card.Root>
-          
-          <Card.Root>
-            <Card.Image />
-            <Card.Data/>
-          </Card.Root>
-          
-          <Card.Root>
-            <Card.Image />
-            <Card.Data/>
-          </Card.Root>
-          
-          <Card.Root>
-            <Card.Image />
-            <Card.Data/>
-          </Card.Root>
-
-        </div>
-
-        <div className=" flex justify-center items-center">
+        <div className=" flex justify-center items-center mb-10">
           <button
             className="px-10 p-4 bg-sky-700 text-white font-medium outline-none transition duration-500 hover:bg-sky-800">
             SHOP NOW
           </button>
         </div>
-
-      </section>
 
       <Footer/>
 
