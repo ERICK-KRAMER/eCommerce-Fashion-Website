@@ -7,8 +7,9 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        'baner': 'url("./public/baner.png")',
+        'baner': 'url("./public/baner/baner.png")',
         'aboutBaner': 'url("./public/aboutBaner.png")',
+        'contactBaner': 'url("./public/baner/contact.png")',
         'imageAbout': 'url("./public/about/image.png")',
         'imageAbout2': 'url("./public/about/image(1).png")',
       },

@@ -8,7 +8,7 @@ import { Footer } from "../components/footer/footer";
 import { Baner } from "../components/baner/baner";
 import { Sidebar } from "../components/sidebar/sidebar";
 import { SectionComponent } from "../components/home/sectionComponent";
-import { Products } from "../components/products";
+import { Products } from "../api/products";
 
 const Home = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
