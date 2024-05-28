@@ -34,9 +34,9 @@ const ContactUs = () => {
       <ContactUsBaner />
       
       <section className="p-4">
-        <h1 className="text-3xl font-semibold">We would love to hear from you.</h1>
+        <h1 className="text-3xl font-semibold py-1">We would love to hear from you.</h1>
         
-        <p className="text-neutral-400">If you have any query or any type of suggestion, you can contact us here. We would love to hear from you.</p>
+        <p className="text-neutral-400 py-1">If you have any query or any type of suggestion, you can contact us here. We would love to hear from you.</p>
         
         <div className="flex justify-center items-start max-xl:flex-col gap-4">
           
