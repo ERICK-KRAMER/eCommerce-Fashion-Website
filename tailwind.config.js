@@ -8,7 +8,7 @@ export default {
     extend: {
       backgroundImage: {
         'baner': 'url("./public/baner/baner.png")',
-        'aboutBaner': 'url("./public/aboutBaner.png")',
+        'aboutBaner': 'url("./public/baner/aboutBaner.png")',
         'contactBaner': 'url("./public/baner/contact.png")',
         'imageAbout': 'url("./public/about/image.png")',
         'imageAbout2': 'url("./public/about/image(1).png")',

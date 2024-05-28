@@ -40,7 +40,7 @@ const ContactUs = () => {
         
         <div className="flex justify-center items-start max-xl:flex-col gap-4">
           
-          <form className="p-4 w-[80%] max-lg:w-full">
+          <form className=" w-[80%] max-lg:w-full">
 
             <div className="flex gap-4 mb-4">
 
@@ -51,7 +51,7 @@ const ContactUs = () => {
                   name="name"
                   id="name"
                   placeholder="Enter your name"
-                  className="border h-10 px-2 outline-none w-[350px] max-md:w-[200px]"
+                  className="border h-10 px-2 outline-none w-[350px] max-md:w-[200px] max-sm:w-[180px]"
                 />
               </label>
 
@@ -62,7 +62,7 @@ const ContactUs = () => {
                   name="email"
                   id="email"
                   placeholder="Enter your email"
-                  className="border h-10 px-2 outline-none w-[350px] max-md:w-[200px]"
+                  className="border h-10 px-2 outline-none w-[350px] max-md:w-[200px] max-sm:w-[180px]"
                 />
               </label>
             </div>
