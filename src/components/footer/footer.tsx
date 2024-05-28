@@ -1,8 +1,8 @@
 import { ChevronsRight } from "lucide-react";
-import mastercard from "../../../public/mastercard.png";
-import paypal from '../../../public/paypal.png';
-import visa from "../../../public/visa.png";
-import visaElectron from "../../../public/visaElectron.png";
+import mastercard from "../../../public/footer/mastercard.png";
+import paypal from '../../../public/footer/paypal.png';
+import visa from "../../../public/footer/visa.png";
+import visaElectron from "../../../public/footer/visaElectron.png";
 
 
 const Footer = () => {
