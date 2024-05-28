@@ -25,7 +25,7 @@ const About = () => {
           <User className="cursor-pointer"/>
           <ShoppingBag className="cursor-pointer"/>
           <Menu
-            className="cursor-pointer"
+            className="cursor-pointer "
             onClick={(e) => {
               e.stopPropagation()
               setIsOpen(prev => !prev)
@@ -35,7 +35,7 @@ const About = () => {
 
       <AboutBaner />
       
-      <div className="p-10 flex items-center justify-between max-sm:flex-col gap-10">
+      <div className="p-10 flex items-center justify-between max-sm:flex-col gap-10 w-full">
         
         <div className="bg-imageAbout w-[800px] h-[800px] max-lg:w-[500px]
         max-lg:h-[500px] max-md:w-72 max-md:h-72 bg-cover flex justify-center items-end p-10 bg-center">
@@ -49,7 +49,7 @@ const About = () => {
 
       </div>
 
-      <div className="flex justify-center items-center flex-col gap-16 p-10 bg-neutral-200">
+      <div className="flex justify-center items-center flex-col gap-16 p-10 bg-neutral-200 w-full">
         <h1 className="text-3xl font-medium">The Founders</h1>
         <div className="max-md:grid max-md:grid-cols-2 max-md:gap-4 flex justify-center items-center flex-wrap gap-10">
           <div className="flex justify-center items-center flex-col gap-3">
@@ -71,7 +71,7 @@ const About = () => {
         </div>
       </div>
 
-      <div className="flex justify-center items-center gap-4 flex-col p-10">
+      <div className="flex justify-center items-center gap-4 flex-col p-10 w-full">
 
         <h1 className="text-3xl font-medium">Testimonials</h1>
 

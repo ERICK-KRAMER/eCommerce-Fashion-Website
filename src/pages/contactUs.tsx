@@ -21,7 +21,7 @@ const ContactUs = () => {
           <User className="cursor-pointer"/>
           <ShoppingBag className="cursor-pointer"/>
           <Menu
-            className="cursor-pointer"
+            className="cursor-pointer "
             onClick={(e) => {
               e.stopPropagation()
               setIsOpen(prev => !prev)
