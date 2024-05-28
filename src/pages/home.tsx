@@ -8,9 +8,14 @@ import { Footer } from "../components/footer/footer";
 import { Baner } from "../components/baner/baner";
 import { Sidebar } from "../components/sidebar/sidebar";
 import { SectionComponent } from "../components/home/sectionComponent";
+import { Products } from "../components/products";
 
 const Home = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  const firstEightProducts = Products.slice(0, 8); // pega os primeiro 8 produtos do array; ps: array com 12 produtos;
+
+  const lastFourProducts = Products.slice(8, 12); // pega os ultimos 4 produtos do array; ps: array com 12 produtos;
 
   return(
     <main onClick={() => setIsOpen(false)}>
@@ -42,46 +47,14 @@ const Home = () => {
         title="Discover NEW Arrivals"
         description="Recently added shirts!"
       >
-          <Card.Root>
-            <Card.Image />
-            <Card.Data/>
+
+        {firstEightProducts.map(item => (
+          <Card.Root key={item.id}>
+            <Card.Image src={item.image} alt={item.name} />
+            <Card.Data name={item.name} value={item.price} />
           </Card.Root>
+        ))}
           
-          <Card.Root>
-            <Card.Image />
-            <Card.Data/>
-          </Card.Root>
-          
-          <Card.Root>
-            <Card.Image />
-            <Card.Data/>
-          </Card.Root>
-          
-          <Card.Root>
-            <Card.Image />
-            <Card.Data/>
-          </Card.Root>
-          
-          <Card.Root>
-            <Card.Image />
-            <Card.Data/>
-          </Card.Root>
-          
-          <Card.Root>
-            <Card.Image />
-            <Card.Data/>
-          </Card.Root>
-          
-          <Card.Root>
-            <Card.Image />
-            <Card.Data/>
-          </Card.Root>
-          
-          <Card.Root>
-            <Card.Image />
-            <Card.Data/>
-          </Card.Root>
-        
       </SectionComponent>
 
         <Information.Root>
@@ -121,25 +94,14 @@ const Home = () => {
         title="Top Sellers"
         description="Browse our top-selling products"
       >
-          <Card.Root>
-            <Card.Image />
-            <Card.Data/>
-          </Card.Root>
-          
-          <Card.Root>
-            <Card.Image />
-            <Card.Data/>
-          </Card.Root>
-          
-          <Card.Root>
-            <Card.Image />
-            <Card.Data/>
-          </Card.Root>
-          
-          <Card.Root>
-            <Card.Image />
-            <Card.Data/>
-          </Card.Root>
+        {lastFourProducts.map(item => {
+          return (
+            <Card.Root key={item.id}>
+              <Card.Image src={item.image} alt={item.name} />
+              <Card.Data name={item.name} value={item.price} />
+            </Card.Root>
+          )
+        })}
 
       </SectionComponent>
         

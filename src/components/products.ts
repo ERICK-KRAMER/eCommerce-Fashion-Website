@@ -11,7 +11,14 @@ import product10 from "../../public/products/product10.png";
 import product11 from "../../public/products/product11.png";
 import product12 from "../../public/products/product12.png";
 
-const Products = [
+interface ProductsProps {
+  id: number;
+  name: string;
+  price: number,
+  image: string;
+}
+
+const Products: ProductsProps[] = [
   {
     id: 1,
     name: "Plain White Shirt",

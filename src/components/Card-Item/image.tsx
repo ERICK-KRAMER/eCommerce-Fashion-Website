@@ -6,8 +6,8 @@ interface ImageProps extends ImgHTMLAttributes<HTMLImageElement> {
 }
 
 const Image = ({ src, alt }: ImageProps) => {
-  return <img src="https://www.next.com.az/nxtcms/resource/blob/5821504/ee0fc6a294be647924fa5f5e7e3df8e9/hoodies-data.jpg"
-    alt="Example image"
+  return <img src={ src }
+    alt={ alt }
     className=" w-full h-full object-cover object-top" />
 }
 
