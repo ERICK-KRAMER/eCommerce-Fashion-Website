@@ -2,8 +2,13 @@ import { useState } from "react";
 import { Menu, ShoppingBag, User } from "lucide-react";
 import { Header } from "../components/Header";
 import { AboutBaner } from "../components/baner/aboutBaner";
-import founder from "../../public/about/image.png";
-import comment from "../../public/comment.png";
+import HMJawad from "../../public/founders/HM Jawad.png";
+import FurqanAbid from "../../public/founders/Furqan Abid.png";
+import AbrarKhan from "../../public/founders/Abrar Khan.png";
+import AbdullahAh from "../../public/founders/Abdullah Ah.png";
+import James from "../../public/Testimonials/James.png";
+import Tiffany from "../../public/Testimonials/Tiffany.png";
+import Stacy from "../../public/Testimonials/Stacy.png";
 import { Quote } from "lucide-react";
 import { Footer } from "../components/footer/footer";
 import { Sidebar } from "../components/sidebar/sidebar";
@@ -52,21 +57,29 @@ const About = () => {
       <div className="flex justify-center items-center flex-col gap-16 p-10 bg-neutral-200 w-full">
         <h1 className="text-3xl font-medium">The Founders</h1>
         <div className="max-md:grid max-md:grid-cols-2 max-md:gap-4 flex justify-center items-center flex-wrap gap-10">
-          <div className="flex justify-center items-center flex-col gap-3">
-            <img src={founder} alt="ERICK KRAMER" className="w-80 " />
-            <p>ERICK KRAMER</p>
+          <div className="flex items-center flex-col gap-3">
+            <img src={ HMJawad } alt="ERICK KRAMER" className="w-80 " />
+            <span className=" w-full px-4 text-lg font-medium">
+              <p>HM Jawad</p>
+            </span>
           </div>
           <div className="flex justify-center items-center flex-col gap-3">
-            <img src={founder} alt="ERICK KRAMER" className="w-80 " />
-            <p>ERICK KRAMER</p>
+            <img src={FurqanAbid} alt="ERICK KRAMER" className="w-80 " />
+            <span className="w-full px-4 text-lg font-medium">
+              <p>Furqan Abid</p>
+            </span>
           </div>
           <div className="flex justify-center items-center flex-col gap-3">
-            <img src={founder} alt="ERICK KRAMER" className="w-80 " />
-            <p>ERICK KRAMER</p>
+            <img src={AbdullahAh} alt="ERICK KRAMER" className="w-80 " />
+            <span className="w-full px-4 text-lg font-medium">
+              <p>Abdullah Ah</p>
+            </span>
           </div>
           <div className="flex justify-center items-center flex-col gap-3">
-            <img src={founder} alt="ERICK KRAMER" className="w-80 " />
-            <p>ERICK KRAMER</p>
+            <img src={AbrarKhan} alt="ERICK KRAMER" className="w-80 " />
+            <span className="w-full px-4 text-lg font-medium">
+              <p>Abrar Khan</p>
+            </span>
           </div>
         </div>
       </div>
@@ -76,10 +89,10 @@ const About = () => {
         <h1 className="text-3xl font-medium">Testimonials</h1>
 
         <div className="flex p-16 items-center justify-around gap-32 max-xl:flex-col max-lg:gap-8 commentAnimationLeft">
-          <img src={ comment } alt="Comentario" className="w-64 "/>
+          <img src={ Stacy } alt="Comentario" className="w-64 "/>
           <div className="flex flex-col gap-2">
             <Quote/>
-            <p className="w-[700px] font-medium text-lg max-md:w-[500px] max-sm:w-[300px]">Once we ordered some accessories items and we got the products delivered in our doorstep, the customer support was super helpful and they answered all my queries.</p>
+            <p className="w-[700px] font-medium text-lg max-md:w-[500px] max-sm:w-[300px] text-neutral-500">Once we ordered some accessories items and we got the products delivered in our doorstep, the customer support was super helpful and they answered all my queries.</p>
             <small className="text-base">Stacy</small>
           </div>
         </div>
@@ -87,44 +100,22 @@ const About = () => {
         <hr className="w-full bg-neutral-300 h-[1px]"/>
 
         <div className="flex p-16 items-center justify-around gap-32 max-xl:flex-col max-lg:gap-8 commentAnimationRight">
-          <img src={ comment } alt="Comentario" className="w-64 "/>
+          <img src={ Tiffany } alt="Comentario" className="w-64 "/>
           <div className="flex flex-col gap-2">
             <Quote/>
-            <p className="w-[700px] font-medium text-lg max-md:w-[500px] max-sm:w-[300px]">Once we ordered some accessories items and we got the products delivered in our doorstep, the customer support was super helpful and they answered all my queries.</p>
-            <small className="text-base">Stacy</small>
+            <p className="w-[700px] font-medium text-lg max-md:w-[500px] max-sm:w-[300px] text-neutral-500">I ordered 5 shirts from them and received them in no time. The customer support was awesome!</p>
+            <small className="text-base">Tiffany</small>
           </div>
         </div>
 
         <hr className="w-full bg-neutral-300 h-[1px]"/>
 
         <div className="flex p-16 items-center justify-around gap-32 max-xl:flex-col max-lg:gap-8 commentAnimationLeft">
-          <img src={ comment } alt="Comentario" className="w-64 "/>
+          <img src={ James } alt="Comentario" className="w-64 "/>
           <div className="flex flex-col gap-2">
             <Quote/>
-            <p className="w-[700px] font-medium text-lg max-md:w-[500px] max-sm:w-[300px]">Once we ordered some accessories items and we got the products delivered in our doorstep, the customer support was super helpful and they answered all my queries.</p>
-            <small className="text-base">Stacy</small>
-          </div>
-        </div>
-
-        <hr className="w-full bg-neutral-300 h-[1px]"/>
-
-        <div className="flex p-16 items-center justify-around gap-32 max-xl:flex-col max-lg:gap-8 commentAnimationRight">
-          <img src={ comment } alt="Comentario" className="w-64 "/>
-          <div className="flex flex-col gap-2">
-            <Quote/>
-            <p className="w-[700px] font-medium text-lg max-md:w-[500px] max-sm:w-[300px]">Once we ordered some accessories items and we got the products delivered in our doorstep, the customer support was super helpful and they answered all my queries.</p>
-            <small className="text-base">Stacy</small>
-          </div>
-        </div>
-
-        <hr className="w-full bg-neutral-300 h-[1px]"/>
-
-        <div className="flex p-16 items-center justify-around gap-32 max-xl:flex-col max-lg:gap-8 commentAnimationLeft">
-          <img src={ comment } alt="Comentario" className="w-64 "/>
-          <div className="flex flex-col gap-2">
-            <Quote/>
-            <p className="w-[700px] font-medium text-lg max-md:w-[500px] max-sm:w-[300px]">Once we ordered some accessories items and we got the products delivered in our doorstep, the customer support was super helpful and they answered all my queries.</p>
-            <small className="text-base">Stacy</small>
+            <p className="w-[700px] font-medium text-lg max-md:w-[500px] max-sm:w-[300px] text-neutral-500">I got a wrong shirt so I contacted them and they happily offered me a refund. I will surely shop from them again.</p>
+            <small className="text-base">James</small>
           </div>
         </div>
 
