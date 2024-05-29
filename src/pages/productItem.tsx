@@ -4,6 +4,7 @@ import { Sidebar } from "../components/sidebar/sidebar";
 import { useState } from "react";
 import { Footer } from "../components/footer/footer";
 import { useShopContext } from "../context/useContext";
+import { Select } from "../components/select/select";
 
 const ProductItem = () => {
 
@@ -47,14 +48,10 @@ const ProductItem = () => {
             
             <span className="text-sky-700 text-lg"> U$: { getItem?.price }.00</span>
             
-            <span className="w-[600px] font-medium"><p>A classic t-shirt never goes out of style. This is our most premium collection of shirt. This plain white shirt is made up of pure cotton and has a premium finish.</p></span>
+            <span className="w-[600px] font-medium text-neutral-500"><p>{ getItem?.description }</p></span>
 
-            <select name="size-item" className="w-[300px] outline-none border p-2">
-              <option value="s">small</option>
-              <option value="m">Medium</option>
-              <option value="l">Large</option>
-              <option value="xl">Extra Large</option>
-            </select>
+              <Select />
+            
             <button className="px-10 py-3 bg-sky-600 text-white" onClick={ ()=> cartItem() }>Add to Cart</button>
           </div>
         </div>
