@@ -9,6 +9,7 @@ import { Baner } from "../components/baner/baner";
 import { Sidebar } from "../components/sidebar/sidebar";
 import { SectionComponent } from "../components/home/sectionComponent";
 import { Products } from "../api/products";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -49,11 +50,13 @@ const Home = () => {
       >
 
         {firstEightProducts.map(item => (
-          <Card.Root key={item.id}>
-            <Card.Image src={item.image} alt={item.name} />
-            <Card.Data name={item.name} value={item.price} />
-            <Card.Button/>
-          </Card.Root>
+          <Link to={'/product'}>
+            <Card.Root key={item.id}>
+              <Card.Image src={item.image} alt={item.name} />
+              <Card.Data name={item.name} value={item.price} />
+              {/* <Card.Button/> */}
+            </Card.Root>
+          </Link>
         ))}
           
       </SectionComponent>
@@ -95,15 +98,15 @@ const Home = () => {
         title="Top Sellers"
         description="Browse our top-selling products"
       >
-        {lastFourProducts.map(item => {
-          return (
+        {lastFourProducts.map(item => (
+          <Link to={'/product'}>
             <Card.Root key={item.id}>
               <Card.Image src={item.image} alt={item.name} />
               <Card.Data name={item.name} value={item.price} />
-              <Card.Button/>
+              {/* <Card.Button/> */}
             </Card.Root>
-          )
-        })}
+          </Link>
+        ))}
 
       </SectionComponent>
         
