@@ -17,7 +17,7 @@ const Home = () => {
 
   const navigate = useNavigate();
 
-  const { cartItem, item } = useShopContext();
+  const { cartItem, item, GetItem } = useShopContext();
 
   const handleClick = () => {
     cartItem();
@@ -62,7 +62,7 @@ const Home = () => {
 
         {firstEightProducts.map(item => (
           <Card.Root key={item.id}>
-            <Card.Image src={item.image} alt={item.name} onClick={()=> navigate('/product')}/>
+            <Card.Image src={item.image} alt={item.name} onClick={() => { GetItem(item); navigate('/product') }}/>
             <Card.Data name={item.name} value={item.price} />
             <Card.Button onClick={handleClick}/>
           </Card.Root>
@@ -109,7 +109,7 @@ const Home = () => {
       >
         {lastFourProducts.map(item => (
           <Card.Root key={item.id}>
-            <Card.Image src={item.image} alt={item.name} onClick={()=> navigate('/product')}/>
+             <Card.Image src={item.image} alt={item.name} onClick={() => { GetItem(item); navigate('/product') }}/>
             <Card.Data name={item.name} value={item.price} />
             <Card.Button onClick={handleClick}/>
           </Card.Root>

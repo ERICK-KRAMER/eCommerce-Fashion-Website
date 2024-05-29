@@ -11,7 +11,7 @@ import product10 from "../../public/products/product10.png";
 import product11 from "../../public/products/product11.png";
 import product12 from "../../public/products/product12.png";
 
-interface ProductsProps {
+export interface ProductsProps {
   id: number;
   name: string;
   price: number,
