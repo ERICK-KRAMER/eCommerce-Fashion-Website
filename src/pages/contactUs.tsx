@@ -4,9 +4,12 @@ import { Header } from "../components/Header";
 import { Sidebar } from "../components/sidebar/sidebar";
 import { ContactUsBaner } from "../components/baner/contactUsBaner";
 import { Footer } from "../components/footer/footer";
+import { useShopContext } from "../context/useContext";
 
 const ContactUs = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  const { item } = useShopContext();
 
   return (
     <main onClick={() => setIsOpen(false)}>
@@ -20,16 +23,20 @@ const ContactUs = () => {
           <Header.item item={"Contact Us"} to="/contact"/>
         </Header.NavItem>
         <Header.NavIcon>
-          <User className="cursor-pointer"/>
-          <ShoppingBag className="cursor-pointer"/>
+          <User className="cursor-pointer" />
+          <span className=" relative">
+            {item ? (<span className="bg-sky-600 text-white rounded-full w-5 h-5 absolute -right-2 -top-2 flex justify-center items-center">{ item }</span>) : null}
+            <ShoppingBag className="cursor-pointer"/>
+          </span>
           <Menu
-            className="cursor-pointer "
+            className="cursor-pointer"
             onClick={(e) => {
               e.stopPropagation()
               setIsOpen(prev => !prev)
             }} />
         </Header.NavIcon>
       </Header.Root>
+
       
       <ContactUsBaner />
       

@@ -9,10 +9,19 @@ import { Baner } from "../components/baner/baner";
 import { Sidebar } from "../components/sidebar/sidebar";
 import { SectionComponent } from "../components/home/sectionComponent";
 import { Products } from "../api/products";
-import { Link } from "react-router-dom";
+import { useShopContext } from "../context/useContext";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  const navigate = useNavigate();
+
+  const { cartItem, item } = useShopContext();
+
+  const handleClick = () => {
+    cartItem();
+  }
 
   const firstEightProducts = Products.slice(0, 8); // pega os primeiro 8 produtos do array; ps: array com 12 produtos;
 
@@ -30,8 +39,11 @@ const Home = () => {
           <Header.item item={"Contact Us"} to="/contact"/>
         </Header.NavItem>
         <Header.NavIcon>
-          <User className="cursor-pointer"/>
-          <ShoppingBag className="cursor-pointer"/>
+          <User className="cursor-pointer" />
+          <span className=" relative">
+            {item ? (<span className="bg-sky-600 text-white rounded-full w-5 h-5 absolute -right-2 -top-2 flex justify-center items-center">{ item }</span>) : null}
+            <ShoppingBag className="cursor-pointer"/>
+          </span>
           <Menu
             className="cursor-pointer"
             onClick={(e) => {
@@ -41,7 +53,6 @@ const Home = () => {
         </Header.NavIcon>
       </Header.Root>
 
-
       <Baner />
       
       <SectionComponent
@@ -50,13 +61,11 @@ const Home = () => {
       >
 
         {firstEightProducts.map(item => (
-          <Link to={'/product'}>
-            <Card.Root key={item.id}>
-              <Card.Image src={item.image} alt={item.name} />
-              <Card.Data name={item.name} value={item.price} />
-              {/* <Card.Button/> */}
-            </Card.Root>
-          </Link>
+          <Card.Root key={item.id}>
+            <Card.Image src={item.image} alt={item.name} onClick={()=> navigate('/product')}/>
+            <Card.Data name={item.name} value={item.price} />
+            <Card.Button onClick={handleClick}/>
+          </Card.Root>
         ))}
           
       </SectionComponent>
@@ -99,13 +108,11 @@ const Home = () => {
         description="Browse our top-selling products"
       >
         {lastFourProducts.map(item => (
-          <Link to={'/product'}>
-            <Card.Root key={item.id}>
-              <Card.Image src={item.image} alt={item.name} />
-              <Card.Data name={item.name} value={item.price} />
-              {/* <Card.Button/> */}
-            </Card.Root>
-          </Link>
+          <Card.Root key={item.id}>
+            <Card.Image src={item.image} alt={item.name} onClick={()=> navigate('/product')}/>
+            <Card.Data name={item.name} value={item.price} />
+            <Card.Button onClick={handleClick}/>
+          </Card.Root>
         ))}
 
       </SectionComponent>

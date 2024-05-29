@@ -1,6 +1,7 @@
-import React, { createContext, useContext } from "react";
+import { createContext, useContext, useState } from "react";
 
 interface MethodsProps {
+  item: number;
   cartItem: () => void;
 }
 
@@ -17,11 +18,15 @@ const useShopContext = (): MethodsProps => {
 
 const ShopProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   
+  const [item, setItem] = useState<number>(0);
+  
   const cartItem = () => {
-    console.log('cartItem');
+    console.log('clicou')
+    setItem(prev => prev + 1);
   }
 
   const methods: MethodsProps = {
+    item,
     cartItem,
   }
 
