@@ -6,28 +6,34 @@ import { useShopContext } from "../context/useContext";
 import { Footer } from "../components/footer/footer";
 import { useNavigate } from "react-router-dom";
 import { Table } from "../components/cart";
+import { useCount } from "../hooks/useCount";
 
 const Cart = () => {
+  const { count } = useCount();
+
   const [isOpen, setIsOpen] = useState<boolean>(false);
+
   const { item, cart } = useShopContext();
+
   const navigate = useNavigate();
 
   const [price, setPrice] = useState<number>(0);
 
-  const handleSidebarToggle = (e:FormEvent) => {
+  const handleSidebarToggle = (e: FormEvent) => {
     e.stopPropagation();
     setIsOpen(prev => !prev);
   };
 
   useEffect(() => {
+
     let total = 0;
-    
+
     cart.forEach(item => {
-      total += Number(item.price);
-    })
-    
+      total += Number(item.price * count);
+    });
+
     setPrice(total);
-  }, [cart]);
+  }, [cart, count]);
 
   return (
     <main onClick={() => setIsOpen(false)} className="relative">
@@ -54,7 +60,7 @@ const Cart = () => {
       </Header.Root>
 
       <section className="px-2 min-h-[525px]">
-        
+
         <Table.Root>
           {cart.length > 0 && cart.map((cartItem, index) => (
             <Table.Item
@@ -62,8 +68,7 @@ const Cart = () => {
               key={index}
               name={cartItem.name}
               price={`$${cartItem.price.toFixed(2)}`}
-              quantity={1}
-              total={`$${(cartItem.price * 1).toFixed(2)}`}
+              total={`$${(cartItem.price * count).toFixed(2)}`}
             />
           ))}
         </Table.Root>
