@@ -5,11 +5,14 @@ import { Sidebar } from "../components/sidebar/sidebar";
 import { ContactUsBaner } from "../components/baner/contactUsBaner";
 import { Footer } from "../components/footer/footer";
 import { useShopContext } from "../context/useContext";
+import { useNavigate } from "react-router-dom";
 
 const ContactUs = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const { item } = useShopContext();
+
+  const navigate = useNavigate();
 
   return (
     <main onClick={() => setIsOpen(false)}>
@@ -24,7 +27,7 @@ const ContactUs = () => {
         </Header.NavItem>
         <Header.NavIcon>
           <User className="cursor-pointer" />
-          <span className=" relative">
+          <span className=" relative" onClick={()=> navigate('/cart')}>
             {item ? (<span className="bg-sky-600 text-white rounded-full w-5 h-5 absolute -right-2 -top-2 flex justify-center items-center">{ item }</span>) : null}
             <ShoppingBag className="cursor-pointer"/>
           </span>

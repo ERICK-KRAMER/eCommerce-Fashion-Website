@@ -8,7 +8,7 @@ import { Footer } from "../components/footer/footer";
 import { Baner } from "../components/baner/baner";
 import { Sidebar } from "../components/sidebar/sidebar";
 import { SectionComponent } from "../components/home/sectionComponent";
-import { Products } from "../api/products";
+import { Products, ProductsProps } from "../api/products";
 import { useShopContext } from "../context/useContext";
 import { useNavigate } from "react-router-dom";
 
@@ -19,8 +19,8 @@ const Home = () => {
 
   const { cartItem, item, GetItem } = useShopContext();
 
-  const handleClick = () => {
-    cartItem();
+  const handleClick = (item:ProductsProps) => {
+    cartItem(item);
   }
 
   const firstEightProducts = Products.slice(0, 8); // pega os primeiro 8 produtos do array; ps: array com 12 produtos;
@@ -40,7 +40,7 @@ const Home = () => {
         </Header.NavItem>
         <Header.NavIcon>
           <User className="cursor-pointer" />
-          <span className=" relative">
+          <span className=" relative" onClick={()=> navigate('/cart')}>
             {item ? (<span className="bg-sky-600 text-white rounded-full w-5 h-5 absolute -right-2 -top-2 flex justify-center items-center">{ item }</span>) : null}
             <ShoppingBag className="cursor-pointer"/>
           </span>
@@ -64,7 +64,7 @@ const Home = () => {
           <Card.Root key={item.id}>
             <Card.Image src={item.image} alt={item.name} onClick={() => { GetItem(item); navigate('/product') }}/>
             <Card.Data name={item.name} value={item.price} />
-            <Card.Button onClick={handleClick}/>
+            <Card.Button onClick={()=> handleClick(item)}/>
           </Card.Root>
         ))}
           
@@ -111,7 +111,7 @@ const Home = () => {
           <Card.Root key={item.id}>
              <Card.Image src={item.image} alt={item.name} onClick={() => { GetItem(item); navigate('/product') }}/>
             <Card.Data name={item.name} value={item.price} />
-            <Card.Button onClick={handleClick}/>
+            <Card.Button onClick={()=> handleClick(item)}/>
           </Card.Root>
         ))}
 

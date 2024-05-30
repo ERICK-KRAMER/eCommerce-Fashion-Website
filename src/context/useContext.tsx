@@ -1,46 +1,50 @@
-import { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useState, ReactNode } from "react";
 import { ProductsProps } from "../api/products";
 
 interface MethodsProps {
   item: number;
   getItem: ProductsProps | undefined;
-  cartItem: () => void;
+  cart: ProductsProps[];
+  cartItem: (data: ProductsProps) => void;
   GetItem: (data: ProductsProps) => void;
 }
 
-export const shopContext = createContext<MethodsProps>({} as MethodsProps);
+export const ShopContext = createContext<MethodsProps>({} as MethodsProps);
 
 // Hook para acessar o contexto
-const useShopContext = (): MethodsProps => {
-  const context = useContext(shopContext);
+export const useShopContext = (): MethodsProps => {
+  const context = useContext(ShopContext);
   if (!context) {
-    throw new Error("useShopContext deve ser usado dentro de um ShopProvider");
+    throw new Error("useShopContext must be used within a ShopProvider");
   }
   return context;
 }
 
-const ShopProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  
+export const ShopProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [item, setItem] = useState<number>(0);
+  const [getItem, setGetItem] = useState<ProductsProps | undefined>(undefined);
+  const [cart, setCart] = useState<ProductsProps[]>([]);
 
-  const [getItem, setGetItem] = useState<ProductsProps>()
-  
-  const cartItem = () => {
+  const cartItem = (data: ProductsProps) => {
     setItem(prev => prev + 1);
+    setCart(prevCart => [...prevCart, data]);
   }
 
   const GetItem = (data: ProductsProps) => {
-    setGetItem(data)
+    setGetItem(data);
   }
 
   const methods: MethodsProps = {
     item,
     getItem,
+    cart,
     cartItem,
     GetItem,
   }
 
-  return <shopContext.Provider value={methods}>{children}</shopContext.Provider>;
+  return (
+    <ShopContext.Provider value={methods}>
+      {children}
+    </ShopContext.Provider>
+  );
 }
-
-export { useShopContext, ShopProvider };
